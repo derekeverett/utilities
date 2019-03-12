@@ -1,0 +1,9 @@
+open gnuplot and type
+
+splot "<awk 'NR==FNR{for(i=1;i<=NF;++i)a[FNR,i]=$i;next}{for(i=1;i<=NF;++i)$i=a[FNR,i]-$i;print}' 'file1.dat' 'file2.dat'" matrix
+
+replacing file1.dat and file2.dat with the appropriate files
+
+or 
+
+plot "<awk 'NR==FNR{for(i=1;i<=NF;++i)a[FNR,i]=$i;next}{for(i=1;i<=NF;++i)$i=a[FNR,i]-$i;print}' 'file1.dat' 'file2.dat'" matrix with image
